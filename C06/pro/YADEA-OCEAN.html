@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Do An Web</title>
+</head>
+<body>
+   <div class="all">
+    <header class="navbar">
+        <div class="logo"><a href="../index.html"><img src="../img/icon2.png"></a></div>
+        <nav class="menu">
+          <a href="../index.html">Trang chủ</a>
+          <a href="../product.html">Sản phẩm</a>
+          <a href="../cart.html">Giỏ hàng</a>
+          <a href="../info.html">Về chúng tôi</a>
+          <span id="login-signin"></span>
+          </span>
+        </nav>
+      </header>
+        <!-- Phần nội dung -->
+        <div class="bottom">
+            <div class="header">
+                <h2>YADEA-OCEAN </h2>
+            </div>
+            
+            <!-- Phần nội dung bên dưới -->
+            <div class="content">
+                <div class="bottom-left">
+                    <p class="price-value">16.990.000</p>
+                    <!-- Nút Mua ngay-->
+                    <a href="../cart.html" class="btn-buy-now-link" onclick="addToCart('YADEA OCEAN', 16990000)">
+                        <button class="btn-buy-now">Mua ngay</button>
+                    </a>
+
+                    <!-- Nút Thêm vào giỏ hàng -->
+                    <button class="add-to-cart-btn"onclick="addToCart('YADEA OCEAN', 16990000)">
+                        <img src="image/icon/giohang.jpg" alt="Giỏ hàng" class="cart-icon"> Thêm vào giỏ hàng
+                    </button>
+                </div>
+        
+                <div class="bottom-right">
+                    <div class="container">
+                        <!-- Khung chứa ảnh xe -->
+                        <div class="image-frame">
+                            <img id="cImage" src="image/OCEAN/ocean-grenn.png" alt="Xe">
+                        </div>
+                        
+                        <div class="color-options">
+                            <div class="color-box white" style="background-color: #76eec6;" onclick="changeCarColor('white')"></div>
+                            <div class="color-box sliver" style="background-color: pink;"   onclick="changeCarColor('sliver')"></div>
+                            <div class="color-box black" style="background-color: white;" onclick="changeCarColor('black')"></div>
+                            <div class="color-box green" onclick="changeCarColor('green')" style="background-color:#c1cdcd ;"></div>
+                            <!-- <div class="color-box blue" style="background-color: #00008b;" onclick="changeCarColor('blue')"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="end">
+    <div class="specifications">
+        <h2>Thông số kỹ thuật</h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Mục</th>
+                    <th>Thông tin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Thời gian sạc</td>
+                    <td>7-8 tiếng</td>
+                </tr>
+                <tr>
+                    <td>Công suất</td>
+                    <td>1200W</td>
+                </tr>
+                <tr>
+                    <td>Tốc độ tối đa</td>
+                    <td>49 km/h</td>
+                </tr>
+                <tr>
+                    <td>Trọng lượng</td>
+                    <td>112 kg</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-container">
+        <!-- Logo và Mô tả -->
+        <div class="footer-section">
+            <img src="../img/icon2.png" alt="Logo" class="footer-logo">
+            <p class="footer-description">
+                Chúng tôi cung cấp các dòng xe điện hiện đại, thân thiện với môi trường và an toàn. Hãy đồng hành cùng chúng tôi để tạo nên một tương lai xanh!
+            </p>
+        </div>
+    
+        <!-- Thông tin Liên hệ -->
+        <div class="footer-section">
+            <h3>Thông tin liên hệ</h3>
+            <ul class="contact-info">
+                <li><i class="icon-phone"></i> Hotline: <a href="tel:0123456789">0123 456 789</a></li>
+                <li><i class="icon-email"></i> Email: <a href="mailto:support@speed.com">support@speed.com</a></li>
+                <li><i class="icon-address"></i> 273 An Dương Vương, Phường 3, Quận 5, Tp. HCM</li>
+            </ul>
+        </div>
+    
+        <!-- Mạng Xã Hội -->
+        <div class="footer-section">
+            <h3>Kết nối với chúng tôi</h3>
+            <ul class="social-links">
+                <li><a href="https://fb.com" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.YouTube.com/" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Xe Việt. Tất cả các quyền được bảo lưu.</p>
+    </div>
+    </footer>
+
+   
+
+    <script>
+    function changeCarColor(color) {
+    const carImage = document.getElementById("cImage");
+    switch (color) {
+        case "white":
+            carImage.src = "image/OCEAN/ocean-grenn.png";
+            break;
+        case "sliver":
+            carImage.src = "image/OCEAN/ocean-pink.png";
+            break;
+        case "black":
+            carImage.src = "image/OCEAN/ocean-white.png";
+            break;
+        case "green":
+            carImage.src = "image/OCEAN/ocean-purple.png";
+            break;
+        case "blue":
+            carImage.src = "image/EVO200/img-evo-blue.webp";
+            break;
+        default:
+            carImage.src = "image/OCEAN/ocean-grenn.png";
+    }
+}
+// Hàm cuộn mượt đến phần tử có class big-box
+function scrollToBigBox() {
+    const bigBoxElement = document.querySelector('.big-box'); // Lấy phần tử big-box
+    if (bigBoxElement) {
+        bigBoxElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Cuộn mượt
+    }
+}
+function scrollToEnd() {
+    const bigBoxElement = document.querySelector('.end'); // Lấy phần tử big-box
+    if (bigBoxElement) {
+        bigBoxElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Cuộn mượt
+    }
+}
+
+
+
+    </script>
+</body>
+<script src="fix.js"></script>
+<script src="../script.js"></script>
+</html>

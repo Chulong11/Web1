@@ -1,0 +1,84 @@
+body {
+  font: 16px/1.5 "Lato", sans-serif;
+  background: #dde9f8; /* Màu nền mới là #dde9f8 */
+  color: #333333; /* Màu chữ tối để dễ đọc trên nền sáng */
+  display: flex;
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  height: 100vh; /* Chiều cao của body để toàn bộ nội dung căn giữa */
+  margin: 0; /* Loại bỏ margin mặc định */
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 50px;
+  padding: 30px;
+  background: #ffffff; /* Màu nền cho box login sáng, tương phản với nền chính */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow nhẹ cho phần box */
+}
+
+h2 {
+  font-size: 1.75rem;
+  text-align: center;
+  color: #242e42; /* Màu tiêu đề đậm hơn để nổi bật */
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #3b4a62; /* Đường viền màu xám xanh sáng hơn một chút */
+  border-radius: 8px;
+  background-color: #f4f7fc; /* Màu nền cho ô input sáng hơn chút */
+}
+
+.input-container i {
+  padding: 12px;
+  color: #a7b4c5; /* Màu icon sáng hơn chút để dễ nhìn trên nền sáng */
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #f4f7fc; /* Màu nền input sáng phù hợp với nền chung */
+  color: #333333; /* Màu chữ tối để dễ đọc */
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #3b4a62; /* Viền khi focus với màu xám xanh sáng hơn */
+  box-shadow: 0 0 5px #3b4a62; /* Hiệu ứng sáng khi focus */
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #3b4a62; /* Màu button có tông xám xanh */
+  color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #2c3a52; /* Màu button tối hơn khi hover */
+}
+
+#message {
+  text-align: center;
+  margin-top: 20px;
+  color: #e74c3c; /* Màu đỏ để thông báo lỗi */
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #a7b4c5; /* Màu chữ placeholder sáng hơn một chút */
+}

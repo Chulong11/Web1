@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    to right,
+    #bce9e6,
+    #bce9e6
+  ); /* Hiệu ứng gradient nền */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Ngăn cuộn trang */
+}
+
+.login-container {
+  background-color: #ffffff; /* Màu nền trắng cho hộp đăng nhập */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bóng đổ mờ */
+  padding: 40px; /* Tăng độ padding để khung lớn hơn */
+  width: 400px; /* Độ rộng hộp đăng nhập */
+  text-align: center;
+  animation: slideIn 0.5s ease; /* Hiệu ứng vào */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px); /* Bắt đầu từ vị trí cao hơn */
+    opacity: 0; /* Bắt đầu từ trong suốt */
+  }
+  to {
+    transform: translateY(0); /* Về vị trí ban đầu */
+    opacity: 1; /* Hiện đầy đủ */
+  }
+}
+
+h2 {
+  color: #d81b1b; /* Màu tiêu đề */
+  margin-bottom: 20px;
+  font-size: 24px; /* Kích thước font cho tiêu đề */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%; /* Chiều rộng 100% */
+  padding: 10px; /* Đệm cho ô input */
+  margin: 10px 0; /* Khoảng cách giữa các ô input */
+  border: 1px solid #eb1111; /* Viền ô input */
+  border-radius: 5px; /* Bo tròn góc ô input */
+  box-sizing: border-box; /* Bao gồm padding và border trong chiều rộng */
+  transition: border-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu viền và phóng to */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #eb1111; /* Đổi màu viền khi ô input được chọn */
+  box-shadow: 0 0 5px rgba(210, 27, 96, 0.5); /* Hiệu ứng bóng cho ô input */
+}
+
+/* Thêm hiệu ứng phóng to khi rê chuột vào ô input */
+input[type="text"]:hover,
+input[type="password"]:hover {
+  transform: scale(1.05); /* Phóng to 5% */
+}
+
+button {
+  background-color: #d83e1b; /* Màu nền nút bấm */
+  color: white; /* Màu chữ trên nút */
+  padding: 10px; /* Đệm cho nút bấm */
+  border: none; /* Không viền */
+  border-radius: 5px; /* Bo tròn góc nút */
+  cursor: pointer; /* Con trỏ khi di chuột qua nút */
+  width: 100%; /* Chiều rộng 100% cho nút bấm */
+  transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển màu và biến đổi */
+}
+
+button:hover {
+  background-color: #b00000; /* Màu nền khi di chuột qua nút */
+  transform: translateY(-2px); /* Di chuyển nút lên một chút khi hover */
+}
+
+#message {
+  color: #9e0770dd; /* Màu chữ thông báo lỗi */
+  margin-top: 10px;
+  font-weight: bold; /* In đậm thông báo */
+  transition: opacity 0.5s; /* Hiệu ứng chuyển đổi cho thông báo */
+}
+
+/* Ẩn thông báo */
+#message.hidden {
+  opacity: 0;
+}
+
+/* ... mã CSS trước đó ... */
+
+.input-container {
+  position: relative; /* Để căn chỉnh icon */
+  margin: 10px 0; /* Khoảng cách giữa các ô input */
+}
+
+.input-container i {
+  position: absolute; /* Để đặt icon ở bên trái ô input */
+  left: 10px; /* Khoảng cách từ trái */
+  top: 50%; /* Căn giữa theo chiều dọc */
+  transform: translateY(-50%); /* Căn chỉnh chính xác */
+  color: #eb1111; /* Màu icon */
+}
+
+/* Giữ nguyên phần còn lại của mã CSS */
+
+input[type="text"],
+input[type="password"] {
+  padding-left: 40px; /* Đệm bên trái để có chỗ cho icon */
+  /* ... mã trước đó ... */
+}

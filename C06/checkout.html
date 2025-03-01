@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh Toán Đơn Hàng</title>
+  <link rel="stylesheet" href="style.css">
+  <style>.cart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cart-item p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.cart-item p strong {
+    font-size: 18px;
+    color: #000;
+}
+
+.cart-item p:nth-child(2) {
+    color: #555;
+    font-style: italic;
+}
+
+.cart-item p:nth-child(3),
+.cart-item p:nth-child(4) {
+    font-weight: bold;
+    color: #3e6486;
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .address, .products, .payment-method {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .address .info {
+      display: flex;
+      align-items: center;
+    }
+    .address img {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+    }
+    #user-name, #user-phone, #user-address {
+      flex: 1;
+    }
+    .address .info div {
+      font-weight: bold; /* In đậm các thông tin */
+    }
+    .change-address {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .change-address:hover {
+      background: darkorange;
+    }
+    .products table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .products th, .products td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .products th {
+      background-color: #f8f8f8;
+    }
+    .products td:last-child {
+      text-align: right;
+    }
+    .total {
+      font-weight: bold;
+      text-align: right;
+    }
+    .payment-method label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .payment-method img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+    .payment-method input[type="radio"] {
+      margin-right: 10px;
+    }
+    .qr-code {
+      display: none;
+      margin-top: 15px;
+      text-align: center;
+    }
+    .qr-code img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background: green;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkorange;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      padding-right: 50px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+    }
+    .modal input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .modal button {
+      width: 100%;
+      padding: 10px;
+      background: #3e6486;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .modal button:hover {
+      background: darkorange;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><a href="index.html"><img src="img/icon2.png"></a></div>
+    <nav class="menu">
+      <a href="index.html">Trang chủ</a>
+      <a href="product.html">Sản phẩm</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="info.html">Về chúng tôi</a>
+      <span id="login-signin"></span>
+      </span>
+    </nav>
+  </header>
+  <div class="container">
+    <!-- Khung địa chỉ -->
+    <div class="address">
+      <h2>Thông Tin Giao Hàng</h2>
+      <div class="info">
+        <div>
+          <div id="user-name"><strong>Tên người nhận:</strong> Đang tải...</div>
+          <div id="user-phone"><strong>Số điện thoại:</strong> Đang tải...</div>
+          <div id="user-address"><strong>Địa chỉ:</strong> Đang tải...</div>
+        </div>
+      </div>
+      <button class="change-address" onclick="openModal()">Thay đổi</button>
+    </div>
+
+    <!-- Khung sản phẩm -->
+    <div class="cart">
+    </div>
+
+    <!-- Khung phương thức thanh toán -->
+    <div class="payment-method">
+      <h2>Phương Thức Thanh Toán</h2>
+      <label>
+        <input type="radio" name="payment" value="cod" checked>
+        Thanh toán khi nhận hàng
+      </label>
+      <label>
+        <input type="radio" name="payment" value="vnpay" id="vnpay-option">
+        Thanh toán bằng thẻ VNPay
+      </label>
+      <div class="qr-code" id="qr-code">
+        <p>Quét mã QR để thanh toán:</p>
+        <img src="img/qrcode.png" alt="QR Code">
+      </div>
+    </div>
+
+    <button id="confirm-order-button">Xác Nhận Đơn Hàng</button>
+  </div>
+
+  <!-- Modal thay đổi địa chỉ -->
+  <div class="modal" id="address-modal">
+    <div class="modal-content">
+      <h2>Chỉnh sửa Thông Tin</h2>
+      <input type="text" id="new-name" placeholder="Nhập tên mới" />
+      <input type="text" id="new-phone" placeholder="Nhập số điện thoại mới" />
+      <input type="text" id="new-address" placeholder="Nhập địa chỉ mới" />
+      <button onclick="saveAddress()">Lưu thông tin</button>
+      <button onclick="closeModal()">Hủy</button>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+        <!-- Logo và Mô tả -->
+        <div class="footer-section">
+            <img src="img/icon2.png" alt="Logo" class="footer-logo">
+            <p class="footer-description">
+                Chúng tôi cung cấp các dòng xe điện hiện đại, thân thiện với môi trường và an toàn. Hãy đồng hành cùng chúng tôi để tạo nên một tương lai xanh!
+            </p>
+        </div>
+    
+        <!-- Thông tin Liên hệ -->
+        <div class="footer-section">
+            <h3>Thông tin liên hệ</h3>
+            <ul class="contact-info">
+                <li><i class="icon-phone"></i> Hotline: <a href="tel:0123456789">0123 456 789</a></li>
+                <li><i class="icon-email"></i> Email: <a href="mailto:support@speed.com">support@speed.com</a></li>
+                <li><i class="icon-address"></i> 273 An Dương Vương, Phường 3, Quận 5, Tp. HCM</li>
+            </ul>
+        </div>
+    
+        <!-- Mạng Xã Hội -->
+        <div class="footer-section">
+            <h3>Kết nối với chúng tôi</h3>
+            <ul class="social-links">
+                <li><a href="https://fb.com" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.YouTube.com/" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Xe Việt. Tất cả các quyền được bảo lưu.</p>
+    </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+<script  src="scripts/checkout.js"></script>
+</html>

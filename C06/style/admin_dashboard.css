@@ -1,0 +1,66 @@
+/* admin_dashboard.css */
+
+body {
+  background-color: #bce9e6; /* Màu nền xanh nhạt */
+  font-family: Arial, sans-serif; /* Font chữ đồng nhất */
+}
+
+.dashboard-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff; /* Màu nền trắng */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #eb1111; /* Màu cam đỏ cho tiêu đề */
+}
+
+#admin-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #eb1111; /* Màu cam đỏ cho tiêu đề chức năng */
+}
+
+ul {
+  list-style-type: none; /* Bỏ gạch đầu dòng */
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+a {
+  display: block;
+  padding: 10px;
+  background-color: #ff3d00; /* Nền liên kết cam */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: #b00000; /* Màu đỏ đậm hơn khi hover */
+}
+
+/* Chức năng đăng xuất riêng */
+.logout {
+  text-align: center; /* Căn giữa */
+  margin-top: 30px; /* Khoảng cách phía trên */
+}
+
+.logout a {
+  background-color: #ff3d00; /* Màu cam cho nút đăng xuất */
+}
+
+.logout a:hover {
+  background-color: #b00000; /* Màu tối hơn khi hover */
+}

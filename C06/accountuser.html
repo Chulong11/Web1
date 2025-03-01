@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Thông Tin Người Dùng</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/account.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><a href="index.html"><img src="img/icon2.png"></a></div>
+    <nav class="menu">
+      <a href="index.html">Trang chủ</a>
+      <a href="product.html">Sản phẩm</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="info.html">Về chúng tôi</a>
+      <span id="login-signin"></span>
+    </nav>
+  </header>
+  <!-- Khung thông tin tài khoản -->
+  <div class="form-container">
+    <h2>Thông tin tài khoản</h2>
+    <div class="info-box">
+      <p><strong>Tên đăng nhập:</strong> <span id="username-display"></span></p>
+      <label for="fullname">Họ và tên:</label>
+      <input type="text" id="fullname" placeholder="Nhập họ và tên">
+      <label for="phone">Số điện thoại:</label>
+      <input type="text" id="phone" placeholder="Nhập số điện thoại">
+      <label for="address">Nhập địa chỉ:</label>
+      <input type="text" id="address" placeholder="Nhập địa chỉ của bạn">
+    </div>
+
+    <button id="save-info">Lưu thông tin</button>
+  </div>
+
+  <!-- Khung lịch sử mua hàng -->
+  <div id="order-history">
+    <h2>Lịch sử đơn hàng của bạn</h2>
+    <div id="orders-container"></div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+        <!-- Logo và Mô tả -->
+        <div class="footer-section">
+            <img src="img/icon2.png" alt="Logo" class="footer-logo">
+            <p class="footer-description">
+                Chúng tôi cung cấp các dòng xe điện hiện đại, thân thiện với môi trường và an toàn. Hãy đồng hành cùng chúng tôi để tạo nên một tương lai xanh!
+            </p>
+        </div>
+
+        <!-- Thông tin Liên hệ -->
+        <div class="footer-section">
+            <h3>Thông tin liên hệ</h3>
+            <ul class="contact-info">
+                <li><i class="icon-phone"></i> Hotline: <a href="tel:0123456789">0123 456 789</a></li>
+                <li><i class="icon-email"></i> Email: <a href="mailto:support@speed.com">support@speed.com</a></li>
+                <li><i class="icon-address"></i> 273 An Dương Vương, Phường 3, Quận 5, Tp. HCM</li>
+            </ul>
+        </div>
+
+        <!-- Mạng Xã Hội -->
+        <div class="footer-section">
+            <h3>Kết nối với chúng tôi</h3>
+            <ul class="social-links">
+                <li><a href="https://fb.com" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.YouTube.com/" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Xe Việt. Tất cả các quyền được bảo lưu.</p>
+    </div>
+</footer>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+  const userInfo = JSON.parse(localStorage.getItem('currentUser'));
+
+  if (userInfo) {
+    // Hiển thị thông tin người dùng
+    document.getElementById('username-display').textContent = userInfo.username;
+    document.getElementById('fullname').value = userInfo.fullname || '';
+    document.getElementById('phone').value = userInfo.phone || '';
+    document.getElementById('address').value = userInfo.address || '';
+
+    // Lưu thông tin
+    const saveButton = document.getElementById('save-info');
+    saveButton.addEventListener('click', () => {
+      const fullname = document.getElementById('fullname').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      if (!fullname || !phone || !address) {
+        alert('Vui lòng nhập đầy đủ thông tin!');
+        return;
+      }
+
+      userInfo.fullname = fullname;
+      userInfo.phone = phone;
+      userInfo.address = address;
+
+      // Lưu thông tin người dùng đã cập nhật vào localStorage
+      localStorage.setItem('currentUser', JSON.stringify(userInfo));
+      alert('Thông tin đã được cập nhật!');
+    });
+  } else {
+    console.log('User info not found in localStorage');
+  }
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const loggedInUser = JSON.parse(localStorage.getItem('currentUser')); // Get logged-in user info
+  
+  if (!loggedInUser || !loggedInUser.username) {
+    alert('Vui lòng đăng nhập để xem lịch sử đơn hàng.');
+    window.location.href = "login.html"; // Redirect to login page if user is not logged in
+    return;
+  }
+
+  const userOrdersKey = `${loggedInUser.username}_orderHistory`; // Unique key for each user
+  const orderHistory = JSON.parse(localStorage.getItem(userOrdersKey)) || [];
+  const ordersContainer = document.getElementById('orders-container');
+  
+  if (orderHistory.length > 0) {
+    orderHistory.forEach(order => {
+      const orderElement = document.createElement('div');
+      orderElement.classList.add('order-item');
+
+      const orderDate = document.createElement('p');
+      orderDate.textContent = `Ngày đặt hàng: ${order.date}`;
+
+      const totalPrice = document.createElement('p');
+      totalPrice.textContent = `Tổng giá: ${order.totalPrice} VND`;
+      totalPrice.classList.add('total-price');
+
+      const itemsList = document.createElement('ul');
+      order.items.forEach(item => {
+        const itemElement = document.createElement('li');
+        // Display the product name, quantity, price, and color
+        itemElement.textContent = `${item.name} (x${item.quantity}) - ${item.price * item.quantity} VND - Màu: ${item.color || 'Không xác định'}`;
+        itemsList.appendChild(itemElement);
+      });
+
+      orderElement.appendChild(orderDate);
+      orderElement.appendChild(totalPrice);
+      orderElement.appendChild(itemsList);
+
+      ordersContainer.appendChild(orderElement);
+    });
+  } else {
+    ordersContainer.innerHTML = '<p>Bạn chưa có đơn hàng nào.</p>';
+  }
+});
+    </script>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

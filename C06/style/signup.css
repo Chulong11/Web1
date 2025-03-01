@@ -1,0 +1,59 @@
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 150px); /* Trừ chiều cao header và footer */
+  }
+
+  form#signup-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  form#signup-form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  form#signup-form input[type="text"],
+  form#signup-form input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  form#signup-form input:focus {
+    border-color: #3e6486;
+    outline: none;
+    box-shadow: 0 0 4px rgba(62, 100, 134, 0.5);
+  }
+
+  form#signup-form button {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #63c677;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  form#signup-form button:hover {
+    background-color: darkorange;
+  }

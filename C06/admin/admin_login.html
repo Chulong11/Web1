@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/admin_login.css" />
+    <script src="./scripts/login.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Sans+MS&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Đăng Nhập Quản Trị</title>
+  </head>
+  <body>
+    <script>
+      if (sessionStorage.getItem("isLoggedIn")) {
+        window.location.href = "admin_login.html";
+      }
+    </script>
+    <div class="login-container">
+      <h2>Đăng Nhập Quản Trị</h2>
+      <form id="loginForm">
+        <div class="input-container">
+          <i class="fas fa-user"></i>
+          <input type="text" id="username" placeholder="Tài Khoản" required />
+        </div>
+        <div class="input-container">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            placeholder="Mật Khẩu"
+            required
+          />
+        </div>
+        <button type="submit">Đăng Nhập</button>
+      </form>
+      <p id="message"></p>
+    </div>
+  </body>
+</html>

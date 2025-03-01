@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/icon.png">
+</head>
+<style>
+    body {
+    height: 600px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.navbar
+{
+    height: 10%;
+}
+footer{
+    height: 34%;
+}
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+main {
+    width:100% ;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+/* Định dạng modal */
+.modal {
+    display: block; /* Hiển thị modal */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+/* Nội dung modal */
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    max-width: 600px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề modal */
+.modal-content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Các phần hiển thị thông tin người dùng */
+.modal-content p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.modal-content p strong {
+    color: #333;
+}
+
+/* Phần select quận */
+#districtSelect {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Nút xác nhận và hủy */
+#confirmOrderButton,
+#cancelOrderButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirmOrderButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#cancelOrderButton {
+    background-color: #f44336;
+    color: white;
+}
+
+#confirmOrderButton:hover {
+    background-color: #45a049;
+}
+
+#cancelOrderButton:hover {
+    background-color: #e53935;
+}
+
+
+</style>
+<body>
+  <header class="navbar">
+    <div class="logo"><a href="index.html"><img src="img/icon2.png"></a></div>
+    <nav class="menu">
+      <a href="index.html">Trang chủ</a>
+      <a href="product.html">Sản phẩm</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="info.html">Về chúng tôi</a>
+      <span id="login-signin"></span>
+      </span>
+    </nav>
+  </header>
+  <main>
+    <div class="cart-container">
+        <h1>Giỏ hàng của bạn</h1>
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+              <th>Thành tiền</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="cartItems">
+            <!-- Các sản phẩm sẽ được render ở đây -->
+          </tbody>
+        </table>
+        <div class="cart-summary">
+          <p id="totalAmount">Tổng cộng: 0₫</p>
+          <button id="checkoutButton" disabled>Thanh toán</button>
+        </div>
+      </div>
+  </main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo và Mô tả -->
+        <div class="footer-section">
+            <img src="img/icon2.png" alt="Logo" class="footer-logo">
+            <p class="footer-description">
+                Chúng tôi cung cấp các dòng xe điện hiện đại, thân thiện với môi trường và an toàn. Hãy đồng hành cùng chúng tôi để tạo nên một tương lai xanh!
+            </p>
+        </div>
+
+        <!-- Thông tin Liên hệ -->
+        <div class="footer-section">
+            <h3>Thông tin liên hệ</h3>
+            <ul class="contact-info">
+                <li><i class="icon-phone"></i> Hotline: <a href="tel:0123456789">0123 456 789</a></li>
+                <li><i class="icon-email"></i> Email: <a href="mailto:support@speed.com">support@speed.com</a></li>
+                <li><i class="icon-address"></i> 273 An Dương Vương, Phường 3, Quận 5, Tp. HCM</li>
+            </ul>
+        </div>
+
+        <!-- Mạng Xã Hội -->
+        <div class="footer-section">
+            <h3>Kết nối với chúng tôi</h3>
+            <ul class="social-links">
+                <li><a href="https://fb.com" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.YouTube.com/" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Xe Việt. Tất cả các quyền được bảo lưu.</p>
+    </div>
+</footer>
+
+</body>
+<script src="scripts/cart.js"></script>
+<script src="script.js"></script><script>
+    // Gọi hàm hiển thị giỏ hàng khi trang tải
+    displayCart();
+</script>
+</html>

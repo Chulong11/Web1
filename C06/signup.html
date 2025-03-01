@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/signup.css" />
+    <title>Đăng Ký</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo"><a href="index.html"><img src="img/icon2.png"></a></div>
+      <nav class="menu">
+        <a href="index.html">Trang chủ</a>
+        <a href="product.html">Sản phẩm</a>
+        <a href="cart.html">Giỏ hàng</a>
+        <a href="info.html">Về chúng tôi</a>
+        <span id="login-signin"></span>
+        </span>
+      </nav>
+    </header>
+    <main>
+      <div>
+      <form id="signup-form">
+        <label for="fullname">Họ và tên</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên" required>
+  
+        <label for="phone">Số điện thoại</label>
+        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+  
+        <label for="address">Địa chỉ</label>
+        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" required>
+  
+        <label for="username">Tên đăng nhập</label>
+        <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
+  
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+  
+        <label for="confirm-password">Nhập lại mật khẩu</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu" required>
+  
+        <button type="submit">Đăng ký</button>
+      </form>
+    </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+          <!-- Logo và Mô tả -->
+          <div class="footer-section">
+              <img src="img/icon2.png" alt="Logo" class="footer-logo">
+              <p class="footer-description">
+                  Chúng tôi cung cấp các dòng xe điện hiện đại, thân thiện với môi trường và an toàn. Hãy đồng hành cùng chúng tôi để tạo nên một tương lai xanh!
+              </p>
+          </div>
+  
+          <!-- Thông tin Liên hệ -->
+          <div class="footer-section">
+              <h3>Thông tin liên hệ</h3>
+              <ul class="contact-info">
+                  <li><i class="icon-phone"></i> Hotline: <a href="tel:0123456789">0123 456 789</a></li>
+                  <li><i class="icon-email"></i> Email: <a href="mailto:support@speed.com">support@speed.com</a></li>
+                  <li><i class="icon-address"></i> 273 An Dương Vương, Phường 3, Quận 5, Tp. HCM</li>
+              </ul>
+          </div>
+  
+          <!-- Mạng Xã Hội -->
+          <div class="footer-section">
+              <h3>Kết nối với chúng tôi</h3>
+              <ul class="social-links">
+                  <li><a href="https://fb.com" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
+                  <li><a href="https://www.instagram.com" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
+                  <li><a href="https://www.YouTube.com/" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
+              </ul>
+          </div>
+      </div>
+  
+      <div class="footer-bottom">
+          <p>&copy; 2024 Xe Việt. Tất cả các quyền được bảo lưu.</p>
+      </div>
+  </footer>
+
+    <script src="scripts/signup.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

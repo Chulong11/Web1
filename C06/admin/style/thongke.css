@@ -1,0 +1,111 @@
+.page-content h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.page-content form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.page-content label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+input[type="date"] {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.page-content button {
+  padding: 8px 16px;
+  background-color: rgb(0, 204, 255);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.page-content button:hover {
+  background-color: rgb(0, 204, 255);
+}
+
+/* Phần tổng quan */
+.page-content section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#summaryStats {
+  list-style: none;
+  padding: 0;
+}
+
+#summaryStats li {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+#summaryStats li strong {
+  font-weight: bold;
+}
+
+#summaryStats li span {
+  color: #333;
+}
+.page-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Định dạng cho các tiêu đề và ô dữ liệu */
+.page-content th,
+.page-content td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+  color: rgb(0, 204, 255); /* Màu chữ rgb(0, 204, 255) */
+}
+
+/* Định dạng cho tiêu đề */
+.page-content th {
+  background-color: #060606;
+  font-weight: bold;
+}
+
+/* Hiệu ứng hover cho các hàng trong tbody */
+.page-content tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Phần thao tác trong bảng (cột hành động) */
+.page-content th:last-child,
+.page-content td:last-child {
+  width: 120px;
+}
+/* Biểu đồ */
+canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 8px;
+}

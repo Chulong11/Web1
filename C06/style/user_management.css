@@ -1,0 +1,106 @@
+/* user_management.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Xanh nhạt tạo cảm giác thoải mái */
+  }
+  
+  .user-management-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dce7f3;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #ff3d00; /* Đỏ cam */
+  }
+  
+  h3 {
+    color: #eb1111;
+    border-bottom: 2px solid #ff3d00;
+    padding-bottom: 5px;
+  }
+  
+  #loginMessage {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table thead {
+    background-color: #ff3d00; /* Đỏ cam */
+    color: #ffffff;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dce7f3;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #f4faff; /* Màu xanh nhạt cho hàng chẵn */
+  }
+  
+  table tbody tr:hover {
+    background-color: #dce7f3; /* Hiệu ứng khi hover */
+  }
+  
+  #addUserRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #newUsername,
+  #newDob {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #dce7f3;
+    border-radius: 5px;
+  }
+  
+  #newUsername:focus,
+  #newDob:focus {
+    border-color: #1c87c9;
+    outline: none;
+  }
+  
+  #saveUserBtn {
+    background-color: #ff3d00; /* Đỏ cam */
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  #saveUserBtn:hover {
+    background-color: #eb1111; /* Sáng hơn khi hover */
+  }
+  
+  @media (max-width: 600px) {
+    #addUserRow {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    #saveUserBtn {
+      width: 100%;
+    }
+  }

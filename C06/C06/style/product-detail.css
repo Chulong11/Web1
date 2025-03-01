@@ -1,0 +1,278 @@
+/* CSS hiện tại */
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+}
+
+.product {
+    display: flex;
+    width: 100%;
+}
+
+.product-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-image {
+    max-width: 100%;
+    border: 1px solid #ddd;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 190px;
+    height: 130px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    border-color: #333;
+}
+
+.product-details {
+    flex: 2;
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 40px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.product-actions {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quantity-input {
+    text-align: center;
+    width: 10%;
+    font-size: large;
+    height: 50%;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.add-to-cart {
+    height: 70%;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #555;
+}
+
+.extra-links {
+    height: 15%;
+    display: flex;
+    gap: 10px;
+}
+
+.buy-now {
+    font-size: large;
+    height: 100%;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.buy-now:hover {
+    background-color: #f4f4f4;
+}
+
+/* Responsive cho màn hình nhỏ hơn */
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .product {
+        flex-direction: column;
+    }
+
+    .product-details {
+        padding: 15px;
+    }
+
+    .product-title {
+        font-size: 50px;
+    }
+
+    .product-price {
+        font-size: 30px;
+    }
+
+    .thumbnail {
+        width: 140px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-title {
+        font-size: 40px;
+    }
+
+    .product-price {
+        font-size: 25px;
+    }
+
+    .thumbnail {
+        width: 120px;
+        height: 90px;
+    }
+
+    .quantity-input {
+        width: 20%;
+        font-size: medium;
+    }
+
+    .add-to-cart {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .buy-now {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-title {
+        font-size: 30px;
+    }
+
+    .product-price {
+        font-size: 20px;
+    }
+
+    .thumbnail {
+        width: 90px;
+        height: 60px;
+    }
+
+    .quantity-input {
+        width: 30%;
+        font-size: small;
+    }
+
+    .add-to-cart {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .buy-now {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+.specifications {
+    margin: 20px auto;
+    width: 100%; /* Bảng chiếm 90% chiều rộng màn hình */
+    max-width: 1240px; /* Đặt giới hạn chiều rộng tối đa */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .specifications h2 {
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    font-size: 26px; /* Tăng kích thước chữ */
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px; /* Tăng kích thước chữ trong bảng */
+  }
+  
+  .spec-table thead {
+    background-color: #7c7c7c;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .spec-table thead th {
+    padding: 18px; /* Tăng khoảng cách trong ô */
+    text-align: left;
+    border-bottom: 2px solid #0056b3;
+  }
+  
+  .spec-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .spec-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  .spec-table tbody td {
+    padding: 18px; /* Tăng khoảng cách giữa các ô */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .spec-table tbody td:first-child {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .spec-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  @media (max-width: 768px) {
+    .specifications {
+      width: 100%; /* Đảm bảo bảng không bị cắt trên thiết bị nhỏ */
+      margin: 10px;
+    }
+  
+    .specifications h2 {
+      font-size: 22px; /* Giảm kích thước tiêu đề trên thiết bị nhỏ */
+    }
+  
+    .spec-table thead th, .spec-table tbody td {
+      padding: 14px; /* Điều chỉnh khoảng cách cho thiết bị nhỏ */
+      font-size: 16px; /* Giảm kích thước chữ */
+    }
+  }
+  
+  

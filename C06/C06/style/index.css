@@ -1,0 +1,87 @@
+
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 0% 3% 3%;
+    flex-wrap: wrap;
+}
+
+.hero {
+    max-width: 50%;
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 80px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.car-image {
+    margin-right: 0cm;
+    justify-content:end;
+    align-items:flex-end;
+}
+
+.car-image img {
+    width: 100%;
+    max-width: 760px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    main {
+        padding: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .car-image img {
+        max-width: 300px;
+    }
+}

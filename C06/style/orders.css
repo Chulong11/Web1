@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+.container {
+  width: 90%;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.filters select,
+.filters input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+table th {
+  background-color: #f4f4f9;
+  color: #333;
+}
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.status.pending {
+  background-color: #ffcc00;
+  color: #fff;
+}
+.status.confirmed {
+  background-color: #007bff;
+  color: #fff;
+}
+.status.delivered {
+  background-color: #28a745;
+  color: #fff;
+}
+.status.cancelled {
+  background-color: #dc3545;
+  color: #fff;
+}
+.details-link {
+  color: #007bff;
+  text-decoration: none;
+}
+.details-link:hover {
+  text-decoration: underline;
+}

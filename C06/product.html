@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sản phẩm</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product-123.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><a href="index.html"><img src="img/icon2.png"></a></div>
+    
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm">
+        <button id="searchButton">Tìm kiếm</button>
+    </div>
+    <nav class="menu">
+      <a href="index.html">Trang chủ</a>
+      <a href="product.html">Sản phẩm</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="info.html">Về chúng tôi</a>
+      <span id="login-signin"></span>
+      </span>
+    </nav>
+  </header>
+
+  <main>
+    <aside>
+        </div>
+        <h2>Các hãng xe</h2>
+        <ul class="category-list">
+            <li>
+                <label>
+                    <input type="radio" id="vinfast" name="brand">
+                    <span><i></i>Vinfast</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" id="honda" name="brand">
+                    <span><i></i>Honda</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" id="yandea" name="brand">
+                    <span><i></i>Yandea</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" id="espero" name="brand">
+                    <span><i></i>Espero</span>
+                </label>
+            </li>
+        </ul>
+
+        <h2>Giá xe</h2>
+        <div class="price-filter">
+            <label for="priceFrom">Từ:</label>
+            <br>
+            <input type="number" id="priceFrom" placeholder="Nhập giá thấp nhất">
+            <br>
+            <label for="priceTo">Đến:</label>
+            <br>
+            <input type="number" id="priceTo" placeholder="Nhập giá cao nhất">
+            <br>
+            <button id="filterPriceButton">Tìm kiếm</button>
+        </div>
+
+        <ul class="category-list">
+                    <button onclick="untickAll()">Bỏ chọn tất cả</button>
+                
+        </ul>
+    </aside>
+
+    <section class="product-list">
+        <div class="product-card" data-brand="vinfast" data-name="VINFAST KLARAS" data-price="35000000">
+        <a href="pro/VINFAST-KLARAS.html">
+            <img src="pro/image/KLARAS/black-klaras.jpg.png" alt="VinFast Klaras" class="product-image" >
+            <h3>VINFAST KLARAS</h3>
+            <p>Giá từ: 35.000.000₫</p>
+        </a>
+        <button class="add-to-cart-btn">
+            <img src="img/cart.png">
+        </button>
+    </div>
+
+        <div class="product-card" data-brand="yandea" data-name="YADEA OCEAN" data-price="16990000">
+            <a href="pro/YADEA-OCEAN.html">
+                <img src="pro/image/OCEAN/ocean-grenn.png" alt="YADEA OCEAN" class="product-image" >
+                <h3>YADEA OCEAN</h3>
+                <p>Giá từ: 16.990.000₫</p>
+            </a>
+            <button class="add-to-cart-btn"><img src="img/cart.png"></button>
+        </div>
+
+        <div class="product-card" data-brand="honda" data-name="HONDA CUV E" data-price="32000000">
+            <a href="pro/HONDA-CUV E.html">
+                <img src="pro/image/CUV E/den.png" alt="HONDA CUV E" class="product-image" style="width: 120%; position: relative; left: -5%;" >
+                <h3>HONDA CUV E</h3>
+                <p>Giá từ: 32.000.000₫</p>
+            </a>
+            <button class="add-to-cart-btn" ><img src="img/cart.png"></button>
+        </div>
+
+        <div class="product-card" data-brand="vinfast" data-name="VINFAST FELIZ S" data-price="27000000">
+            <a href="pro/VINFAST-FELIZ S.html">
+                <img src="pro/image/FELIZ S/img-top-felizs-red.webp" alt="VinFast Feliz S" class="product-image">
+                <h3>VINFAST FELIZ S</h3>
+                <p>Giá từ: 27.000.000₫</p>
+            </a>
+               <button class="add-to-cart-btn" ><img src="img/cart.png"></button>
+        </div>
+
+        <div class="product-card" data-brand="espero" data-name="ESPERO GOGO F1 PRO" data-price="17990000">
+            <a href="pro/ESPERO GOGO-F1 PRO.html">
+                <img src="pro/image/ESPERO GOGO-F1 PRO/gogoF1-pro-trang.jpg" alt="ESPERO GOGO F1 PRO" class="product-image" >
+                <h3>ESPERO GOGO F1 PRO</h3>
+                <p>Giá từ: 17.990.000₫</p>
+            </a>
+            <button class="add-to-cart-btn"><img src="img/cart.png"></button>
+        </div>
+
+        <div class="product-card" data-brand="vinfast" data-name="VINFAST EVO 200" data-price="18000000">
+            <a href="pro/VINFAST-EVO-200.html">
+                <img src="pro/image/EVO200/img-evo-red.webp" alt="Vinfast  Evo 200" class="product-image" style="width: 135%; position: relative; left: -18%;">
+                <h3>VINFAST EVO 200</h3>
+                <p>Giá từ: 18.000.000₫</p>
+            </a>
+            <button class="add-to-cart-btn"><img src="img/cart.png"></button>
+        </div>
+
+        <div class="product-card" data-brand="yandea" data-name="YADEA ORIS" data-price="22990000">
+            <a href="pro/YADEA-ORIS.html">
+                <img src="pro/image/ORIS/oris-xanh.png" alt="YADEA ORIS" class="product-image" >
+                <h3>YADEA ORIS</h3>
+                <p>Giá từ: 22.990.000₫</p>
+            </a>
+            <button class="add-to-cart-btn"><img src="img/cart.png"></button>
+        </div>
+
+        <div class="product-card" data-brand="espero" data-name="ESPERO E SYNC" data-price="15990000">
+            <a href="pro/ESPERO-E-SYNC.html">
+                <img src="pro/image/ESPERO E-SYNC/Esyn-su-hao.jpg" alt="ESPERO E SYNC" class="product-image" >
+                <h3>ESPERO E SYNC</h3>
+                <p>Giá từ: 15.990.000₫</p>
+            </a>
+            <button class="add-to-cart-btn"><img src="img/cart.png"></button>
+        </div>
+
+        <div class="product-card" data-brand="honda" data-name="HONDA ICONE" data-price="29000000">
+            <a href="pro/HONDA-ICONE.html">
+                <img src="pro/image/ICONE/xam.png" alt="HONDA ICONE" class="product-image" style="width: 120%; position: relative; left: -5%;" >
+                <h3>HONDA CUV E</h3>
+                <p>Giá từ: 29.000.000₫</p>
+            </a>
+            <button class="add-to-cart-btn"><img src="img/cart.png"></button>
+        </div>
+
+        <div class="product-card" data-brand="yandea" data-name="YADEA ORLA" data-price="22490000">
+            <a href="pro/YADEA-ORLA.html">
+                <img src="pro/image/Orla/orla-pink.png" alt="YADEA ORIS" class="product-image" >
+                <h3>YADEA ORLA</h3>
+                <p>Giá từ: 22.490.000₫</p>
+            </a>
+            <button class="add-to-cart-btn" ><img src="img/cart.png"></button>
+        </div>
+        <div id="noProductMessage" style="display: none; text-align: center; font-size: 18px; color: red; margin-top: 20px;">
+            Không tìm thấy sản phẩm phù hợp.
+        </div>
+    </section>
+    <!-- Nút chuyển trang -->
+  
+  
+</main>
+<div class="pagination">
+    <button id="prevPage" disabled>Trước</button>
+    <span id="currentPage">1</span> / <span id="totalPages">1</span>
+    <button id="nextPage">Tiếp</button>
+  </div>
+<footer class="footer">
+<div class="footer-container">
+    <!-- Logo và Mô tả -->
+    <div class="footer-section">
+        <img src="img/icon2.png" alt="Logo" class="footer-logo">
+        <p class="footer-description">
+            Chúng tôi cung cấp các dòng xe điện hiện đại, thân thiện với môi trường và an toàn. Hãy đồng hành cùng chúng tôi để tạo nên một tương lai xanh!
+        </p>
+    </div>
+
+    <!-- Thông tin Liên hệ -->
+    <div class="footer-section">
+        <h3>Thông tin liên hệ</h3>
+        <ul class="contact-info">
+            <li><i class="icon-phone"></i> Hotline: <a href="tel:0123456789">0123 456 789</a></li>
+            <li><i class="icon-email"></i> Email: <a href="mailto:support@speed.com">support@speed.com</a></li>
+            <li><i class="icon-address"></i> 273 An Dương Vương, Phường 3, Quận 5, Tp. HCM</li>
+        </ul>
+    </div>
+
+    <!-- Mạng Xã Hội -->
+    <div class="footer-section">
+        <h3>Kết nối với chúng tôi</h3>
+        <ul class="social-links">
+            <li><a href="https://fb.com" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.YouTube.com/" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer-bottom">
+    <p>&copy; 2024 Xe Việt. Tất cả các quyền được bảo lưu.</p>
+</div>
+</footer>
+</body>
+<script>
+    
+</script>
+<script src="script.js"></script>
+</html>

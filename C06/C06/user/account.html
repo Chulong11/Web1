@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông tin người dùng</title>
+
+  <link rel="stylesheet" href="../style/all.css">
+  <style>/* General body styles */
+    
+    .user-account {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    
+    h2 {
+        color: #333;
+        margin-top: 20px;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+    }
+    
+    /* Style for the order history container */
+    #order-history {
+        margin-top: 30px;
+    }
+    
+    #orders-container {
+        margin-top: 20px;
+    }
+    
+    /* Style for each order item */
+    .order-item {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .order-item p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+    
+    .order-item ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .order-item ul li {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+}
+    
+    /* Style for empty order history */
+    #orders-container p {
+        font-size: 16px;
+        color: #777;
+        text-align: center;
+    }
+    
+    /* Style for order total price */
+    .order-item .total-price {
+        font-weight: bold;
+        color: #333;
+        margin-top: 10px;
+    }
+    .order-item .color-label {
+    font-weight: bold;
+    color: #333;
+    margin-left: 5px;
+}
+
+/* You can optionally highlight color in the item display */
+.order-item .color-label {
+    color: #FF5733; /* Example color */
+}
+    /* Khung thông tin tài khoản */
+    .form-container {
+      margin-top: 40px;
+      background-color: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;  /* Chiếm 100% chiều rộng */
+      max-width: 100%;  /* Đảm bảo khung không vượt quá chiều rộng màn hình */
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .form-container h2 {
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 15px;
+    }
+
+    .info-box {
+      text-align: left;
+      font-size: 16px;
+      color: #333;
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+
+    label {
+      font-size: 16px;
+      color: #555;
+      display: inline-block;
+      margin-bottom: 6px;
+      text-align: left;
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: #3e6486;
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    button:hover {
+      background-color: #d7321f;
+    }
+
+    /* Khung lịch sử mua hàng */
+    .history-container {
+      background-color: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;  /* Chiếm 100% chiều rộng */
+      max-width: 100%;  /* Đảm bảo khung không vượt quá chiều rộng màn hình */
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .history-container h2 {
+      font-size: 26px;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive rules */
+    @media (max-width: 768px) {
+      .form-container, .history-container {
+        padding: 15px;
+      }
+
+      .form-container h2, .history-container h2 {
+        font-size: 20px;
+      }
+
+      label, input, button {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .form-container, .history-container {
+        padding: 15px;  /* Giảm padding cho các thiết bị nhỏ */
+      }
+
+      .form-container h2, .history-container h2 {
+        font-size: 18px;
+      }
+
+      input {
+        padding: 8px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body><header>
+  <div class="logo">
+  <a href="index.html">
+      <h1>SPEED</h1>
+      <p>Đại lý xe máy điện</p>
+  </a>
+  </div>
+  
+<div id="result"></div>
+  <nav>
+      <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="product.html">Sản phẩm</a></li>
+          <li><a href="cart.html">Giỏ hàng</a></li>
+          <li><a href="info.html">Về chúng tôi</a></li>
+          <li><span id="login-signin"></span>
+          </span></li>
+      </ul>
+  </nav>
+</header>
+  <!-- Khung thông tin tài khoản -->
+  <div class="form-container">
+    <h2>Thông tin tài khoản</h2>
+    <div class="info-box">
+      <p><strong>Tên đăng nhập:</strong> <span id="username-display"></span></p>
+      <label for="fullname">Họ và tên:</label>
+      <input type="text" id="fullname" placeholder="Nhập họ và tên">
+      <label for="phone">Số điện thoại:</label>
+      <input type="text" id="phone" placeholder="Nhập số điện thoại">
+      <label for="address">Nhập địa chỉ:</label>
+      <input type="text" id="address" placeholder="Nhập địa chỉ của bạn">
+    </div>
+
+    <button id="save-info">Lưu thông tin</button>
+  </div>
+
+  <!-- Khung lịch sử mua hàng -->
+  <div id="order-history">
+    <h2>Lịch sử đơn hàng của bạn</h2>
+    <div id="orders-container"></div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+        <!-- Logo và Mô tả -->
+        <div class="footer-section">
+            <img src="img/icon2.png" alt="Logo" class="footer-logo">
+            <p class="footer-description">
+                Chúng tôi cung cấp các dòng xe điện hiện đại, thân thiện với môi trường và an toàn. Hãy đồng hành cùng chúng tôi để tạo nên một tương lai xanh!
+            </p>
+        </div>
+
+        <!-- Thông tin Liên hệ -->
+        <div class="footer-section">
+            <h3>Thông tin liên hệ</h3>
+            <ul class="contact-info">
+                <li><i class="icon-phone"></i> Hotline: <a href="tel:0123456789">0123 456 789</a></li>
+                <li><i class="icon-email"></i> Email: <a href="mailto:support@speed.com">support@speed.com</a></li>
+                <li><i class="icon-address"></i> 273 An Dương Vương, Phường 3, Quận 5, Tp. HCM</li>
+            </ul>
+        </div>
+
+        <!-- Mạng Xã Hội -->
+        <div class="footer-section">
+            <h3>Kết nối với chúng tôi</h3>
+            <ul class="social-links">
+                <li><a href="https://fb.com" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.YouTube.com/" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Xe Việt. Tất cả các quyền được bảo lưu.</p>
+    </div>
+</footer>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+  const userInfo = JSON.parse(localStorage.getItem('currentUser'));
+
+  if (userInfo) {
+    // Hiển thị thông tin người dùng
+    document.getElementById('username-display').textContent = userInfo.username;
+    document.getElementById('fullname').value = userInfo.fullname || '';
+    document.getElementById('phone').value = userInfo.phone || '';
+    document.getElementById('address').value = userInfo.address || '';
+
+    // Lưu thông tin
+    const saveButton = document.getElementById('save-info');
+    saveButton.addEventListener('click', () => {
+      const fullname = document.getElementById('fullname').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      if (!fullname || !phone || !address) {
+        alert('Vui lòng nhập đầy đủ thông tin!');
+        return;
+      }
+
+      userInfo.fullname = fullname;
+      userInfo.phone = phone;
+      userInfo.address = address;
+
+      // Lưu thông tin người dùng đã cập nhật vào localStorage
+      localStorage.setItem('currentUser', JSON.stringify(userInfo));
+      alert('Thông tin đã được cập nhật!');
+    });
+  } else {
+    console.log('User info not found in localStorage');
+  }
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const loggedInUser = JSON.parse(localStorage.getItem('currentUser')); // Get logged-in user info
+  
+  if (!loggedInUser || !loggedInUser.username) {
+    alert('Vui lòng đăng nhập để xem lịch sử đơn hàng.');
+    window.location.href = "login.html"; // Redirect to login page if user is not logged in
+    return;
+  }
+
+  const userOrdersKey = `${loggedInUser.username}_orderHistory`; // Unique key for each user
+  const orderHistory = JSON.parse(localStorage.getItem(userOrdersKey)) || [];
+  const ordersContainer = document.getElementById('orders-container');
+  
+  if (orderHistory.length > 0) {
+    orderHistory.forEach(order => {
+      const orderElement = document.createElement('div');
+      orderElement.classList.add('order-item');
+
+      const orderDate = document.createElement('p');
+      orderDate.textContent = `Ngày đặt hàng: ${order.date}`;
+
+      const totalPrice = document.createElement('p');
+      totalPrice.textContent = `Tổng giá: ${order.totalPrice} VND`;
+      totalPrice.classList.add('total-price');
+
+      const itemsList = document.createElement('ul');
+      order.items.forEach(item => {
+        const itemElement = document.createElement('li');
+        // Display the product name, quantity, price, and color
+        itemElement.textContent = `${item.name} (x${item.quantity}) - ${item.price * item.quantity} VND - Màu: ${item.color || 'Không xác định'}`;
+        itemsList.appendChild(itemElement);
+      });
+
+      orderElement.appendChild(orderDate);
+      orderElement.appendChild(totalPrice);
+      orderElement.appendChild(itemsList);
+
+      ordersContainer.appendChild(orderElement);
+    });
+  } else {
+    ordersContainer.innerHTML = '<p>Bạn chưa có đơn hàng nào.</p>';
+  }
+});
+
+
+  </script>
+<script  type="module" src="../scripts/index-user.js"></script>
+</body>
+</html>
