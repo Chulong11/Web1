@@ -1,6 +1,4 @@
-# Web1
-first time doing it still have many mistakes
-member:
+
 -1: Chu The Long
 -2: Ngo Minh Quoc An
 -3: Pham Ngoc Tue Minh
